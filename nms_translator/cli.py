@@ -1,7 +1,8 @@
 import click
+from pathlib import Path
 from nms_translator import __version__
 
-LORE_PATH = "~/nms_lore.txt"
+LORE_PATH = Path().home() / "nms_lore.txt"
 
 
 @click.group()
@@ -17,7 +18,6 @@ def cli():
     "-y", "--yres", type=click.INT, help="Your display's Y resolution", default=1080
 )
 def ts(xres: int, yres: int):
-    import os
     from nms_translator.grabber import grab_screen
     from nms_translator.textract import extract_from_file
     from nms_translator.translator import translate
@@ -25,10 +25,7 @@ def ts(xres: int, yres: int):
     screen = grab_screen()
     encoded_str = extract_from_file(screen)
     final = translate(encoded_str)
-    write_mode = "a"
-    if not (os.path.exists(LORE_PATH) or os.path.isfile(LORE_PATH)):
-        write_mode = "w"
-    with open(LORE_PATH, write_mode) as f:
+    with open(LORE_PATH, "a+") as f:
         f.write(f"{final}\n")
 
 
