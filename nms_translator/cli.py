@@ -26,7 +26,7 @@ def ts(xres: int, yres: int):
     encoded_str = extract_from_file(screen)
     final = translate(encoded_str)
     write_mode = "a"
-    if not os.path.isfile(LORE_PATH):
+    if not (os.path.exists(LORE_PATH) or os.path.isfile(LORE_PATH)):
         write_mode = "w"
     with open(LORE_PATH, write_mode) as f:
         f.write(f"{final}\n")
