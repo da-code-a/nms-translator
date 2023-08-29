@@ -8,5 +8,7 @@ from pytesseract import pytesseract
 
 def extract_from_file(path: str) -> str:
     img = Image.open(path)
-    text = pytesseract.image_to_string(img).replace("\n", " ").strip()
+    text = "".join(
+        [char for char in pytesseract.image_to_string(img) if char in ["1", "0", " "]]
+    )
     return text
