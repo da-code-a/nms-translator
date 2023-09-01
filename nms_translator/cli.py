@@ -30,7 +30,7 @@ def cli():
     default=1920,
 )
 @click.option(
-    "--xend",
+    "--yend",
     type=click.INT,
     help="Vertical end of bounding box, defaults to bottom right of a 1920x1080 display",
     default=1080,
@@ -40,7 +40,7 @@ def ts(xstart: int, ystart: int, xend: int, yend: int):
     from nms_translator.textract import extract_from_file
     from nms_translator.translator import translate
 
-    screen = grab_screen()
+    screen = grab_screen(xstart=xstart, xend=xend, ystart=ystart, yend=yend)
     encoded_str = extract_from_file(screen)
     final = translate(encoded_str)
     with open(LORE_PATH, "a+") as f:

@@ -29,6 +29,8 @@ Then, when you hit your hotkey, it will run the script without launching a termi
 Changelog
 ---
 
+* v1.1.1
+  * Fixed capture and translate
 * v1.1.0
   * Added option to set boundary box
   * Made it so that values actually get passed to grab function
