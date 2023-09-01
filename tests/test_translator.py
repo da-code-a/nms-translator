@@ -24,5 +24,6 @@ def test_translate_from_img():
     from nms_translator.translator import translate
 
     encoded_str = extract_from_file(test_image_dir / "binary.png")
+    print(encoded_str)
     decoded_str = translate(encoded_str)
     assert decoded_str == "this is a test"
