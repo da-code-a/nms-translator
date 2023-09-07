@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nms-ts"
-version = "1.1.2"
+version = "1.1.3"
 description = "A tool for grabbing binary text from a No Man's Sky screenshot and translating it to UTF-8 for you."
 authors = ["Dakota Brown <dakota.kae.brown@gmail.com>"]
 readme = "README.md"

@@ -29,6 +29,8 @@ Then, when you hit your hotkey, it will run the script without launching a termi
 Changelog
 ---
 
+* v1.1.3
+  * Preserve spaces
 * v1.1.2
   * Actually fixed the damn thing
 * v1.1.1
